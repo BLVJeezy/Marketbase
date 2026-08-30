@@ -29,13 +29,14 @@
     });
   });
 
-  /* Officieel Marketbase-logo. */
-  var officialLogo = document.querySelector('.mb-logo img');
-  if (officialLogo) {
-    officialLogo.setAttribute('src', 'https://marketbase.nl/wp-content/uploads/2025/02/logomarket.png');
-    officialLogo.removeAttribute('srcset');
-    officialLogo.removeAttribute('height');
-  }
+  /* Officieel Marketbase-logo uit de repo. */
+  document.querySelectorAll('.mb-logo img').forEach(function (logo) {
+    logo.setAttribute('src', 'assets/img/marketbase-logo.webp');
+    logo.removeAttribute('srcset');
+    logo.removeAttribute('height');
+    logo.setAttribute('alt', 'Marketbase');
+    logo.setAttribute('decoding', 'async');
+  });
 
   /* ---------- 1. Mega-menu (desktop) --------------------------------- */
   var items = Array.prototype.slice.call(document.querySelectorAll('[data-mega]'));
