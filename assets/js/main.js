@@ -7,6 +7,28 @@
 
   var mq = window.matchMedia('(min-width: 900px)');
 
+  /* ---------- 0. Approved homepage images ---------------------------- */
+  /* Hero intentionally remains untouched until the final hero is generated. */
+  var approvedImages = [
+    ['cat-vouwtenten.svg', 'https://id-preview--911eb59e-e99c-4338-a3ae-85d1cb979676.lovable.app/transfer/cat-folding.jpg'],
+    ['cat-stretchtenten.svg', 'https://id-preview--911eb59e-e99c-4338-a3ae-85d1cb979676.lovable.app/transfer/cat-stretch.jpg'],
+    ['cat-pagodetenten.svg', 'https://id-preview--911eb59e-e99c-4338-a3ae-85d1cb979676.lovable.app/transfer/cat-pagoda.jpg'],
+    ['cat-marktmateriaal.svg', 'https://id-preview--911eb59e-e99c-4338-a3ae-85d1cb979676.lovable.app/transfer/cat-market.jpg'],
+    ['cat-schaduwdoeken.svg', 'https://id-preview--911eb59e-e99c-4338-a3ae-85d1cb979676.lovable.app/transfer/cat-shade.jpg'],
+    ['cat-accessoires.svg', 'https://id-preview--911eb59e-e99c-4338-a3ae-85d1cb979676.lovable.app/transfer/cat-accessories.jpg'],
+    ['app-events.svg', 'https://id-preview--911eb59e-e99c-4338-a3ae-85d1cb979676.lovable.app/transfer/project-festival.jpg']
+  ];
+
+  approvedImages.forEach(function (pair) {
+    document.querySelectorAll('img').forEach(function (img) {
+      var src = img.getAttribute('src') || '';
+      if (src.indexOf(pair[0]) !== -1) {
+        img.setAttribute('src', pair[1]);
+        img.removeAttribute('srcset');
+      }
+    });
+  });
+
   /* ---------- 1. Mega-menu (desktop) --------------------------------- */
   var items = Array.prototype.slice.call(document.querySelectorAll('[data-mega]'));
 
@@ -38,7 +60,6 @@
     });
     item.addEventListener('mouseleave', function () { if (mq.matches) closeMega(item); });
 
-    /* focus verlaat het item volledig -> sluiten */
     item.addEventListener('focusout', function (e) {
       if (!mq.matches) return;
       if (!item.contains(e.relatedTarget)) closeMega(item);
@@ -97,7 +118,6 @@
     scrim.addEventListener('click', closeDrawer);
     if (drawerClose) drawerClose.addEventListener('click', closeDrawer);
 
-    /* focus trap */
     drawer.addEventListener('keydown', function (e) {
       if (e.key !== 'Tab') return;
       var f = focusables(drawer);
