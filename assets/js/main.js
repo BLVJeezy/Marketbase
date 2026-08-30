@@ -8,14 +8,14 @@
   var mq = window.matchMedia('(min-width: 900px)');
 
   /* ---------- 0. Live Marketbase images ------------------------------ */
-  /* Gebruik publieke Marketbase-media zodat de afbeeldingen ook op Vercel laden. */
+  /* Gebruik de grotere/originele Marketbase-media in plaats van thumbnails. */
   var approvedImages = [
-    ['cat-vouwtenten.svg', 'https://marketbase.be/wp-content/uploads/2025/02/7da294a15a675269a8a4ab560e648783.avif'],
-    ['cat-stretchtenten.svg', 'https://marketbase.be/wp-content/uploads/2026/02/Stretchtent-render-1.avif'],
+    ['cat-vouwtenten.svg', 'https://marketbase.be/wp-content/uploads/2025/11/Folding_Tent_3x3m_Print__10206174_scaled-1.jpeg'],
+    ['cat-stretchtenten.svg', 'https://marketbase.be/wp-content/uploads/2025/11/69416d10a4ac2-cb40d88bbd2dd695a82f060c861d8331ef7e443b_77_scaled_1920x1920.webp'],
     ['cat-pagodetenten.svg', 'https://marketbase.be/wp-content/uploads/2025/02/b3da592a22f18f32a82f578c251fab7e.avif'],
     ['cat-marktmateriaal.svg', 'https://marketbase.be/wp-content/uploads/2026/02/fidji-300-rood.webp'],
-    ['cat-schaduwdoeken.svg', 'https://marketbase.be/wp-content/uploads/2025/02/New-Project-13.webp'],
-    ['cat-accessoires.svg', 'https://marketbase.be/wp-content/uploads/2025/02/New-Project-15.webp']
+    ['cat-schaduwdoeken.svg', 'https://marketbase.be/wp-content/uploads/2026/04/Schaduwdoek-vierkant-5-x-5-m-Ademend-HDPE-Light-Grey.webp'],
+    ['cat-accessoires.svg', 'https://marketbase.be/wp-content/uploads/2025/11/Betonblok-1000-kg-met-een-oogbout-800x600.avif']
   ];
 
   approvedImages.forEach(function (pair) {
@@ -24,6 +24,7 @@
       if (src.indexOf(pair[0]) !== -1) {
         img.setAttribute('src', pair[1]);
         img.removeAttribute('srcset');
+        img.setAttribute('decoding', 'async');
       }
     });
   });
