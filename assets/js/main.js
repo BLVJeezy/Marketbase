@@ -7,16 +7,15 @@
 
   var mq = window.matchMedia('(min-width: 900px)');
 
-  /* ---------- 0. Approved homepage images ---------------------------- */
-  /* Hero intentionally remains untouched until the final hero is generated. */
+  /* ---------- 0. Live Marketbase images ------------------------------ */
+  /* Gebruik publieke Marketbase-media zodat de afbeeldingen ook op Vercel laden. */
   var approvedImages = [
-    ['cat-vouwtenten.svg', 'https://id-preview--911eb59e-e99c-4338-a3ae-85d1cb979676.lovable.app/transfer/cat-folding.jpg'],
-    ['cat-stretchtenten.svg', 'https://id-preview--911eb59e-e99c-4338-a3ae-85d1cb979676.lovable.app/transfer/cat-stretch.jpg'],
-    ['cat-pagodetenten.svg', 'https://id-preview--911eb59e-e99c-4338-a3ae-85d1cb979676.lovable.app/transfer/cat-pagoda.jpg'],
-    ['cat-marktmateriaal.svg', 'https://id-preview--911eb59e-e99c-4338-a3ae-85d1cb979676.lovable.app/transfer/cat-market.jpg'],
-    ['cat-schaduwdoeken.svg', 'https://id-preview--911eb59e-e99c-4338-a3ae-85d1cb979676.lovable.app/transfer/cat-shade.jpg'],
-    ['cat-accessoires.svg', 'https://id-preview--911eb59e-e99c-4338-a3ae-85d1cb979676.lovable.app/transfer/cat-accessories.jpg'],
-    ['app-events.svg', 'https://id-preview--911eb59e-e99c-4338-a3ae-85d1cb979676.lovable.app/transfer/project-festival.jpg']
+    ['cat-vouwtenten.svg', 'https://marketbase.be/wp-content/uploads/2025/02/7da294a15a675269a8a4ab560e648783.avif'],
+    ['cat-stretchtenten.svg', 'https://marketbase.be/wp-content/uploads/2026/02/Stretchtent-render-1.avif'],
+    ['cat-pagodetenten.svg', 'https://marketbase.be/wp-content/uploads/2025/02/b3da592a22f18f32a82f578c251fab7e.avif'],
+    ['cat-marktmateriaal.svg', 'https://marketbase.be/wp-content/uploads/2026/02/fidji-300-rood.webp'],
+    ['cat-schaduwdoeken.svg', 'https://marketbase.be/wp-content/uploads/2025/02/New-Project-13.webp'],
+    ['cat-accessoires.svg', 'https://marketbase.be/wp-content/uploads/2025/02/New-Project-15.webp']
   ];
 
   approvedImages.forEach(function (pair) {
@@ -28,6 +27,14 @@
       }
     });
   });
+
+  /* Officieel Marketbase-logo. */
+  var officialLogo = document.querySelector('.mb-logo img');
+  if (officialLogo) {
+    officialLogo.setAttribute('src', 'https://marketbase.nl/wp-content/uploads/2025/02/logomarket.png');
+    officialLogo.removeAttribute('srcset');
+    officialLogo.removeAttribute('height');
+  }
 
   /* ---------- 1. Mega-menu (desktop) --------------------------------- */
   var items = Array.prototype.slice.call(document.querySelectorAll('[data-mega]'));
