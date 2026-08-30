@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 536 246" role="img" aria-label="Marketbase">
+  <title>Marketbase</title>
+  <!-- Reconstructie op basis van het aangeleverde logobeeld.
+       TODO: vervangen door het officiële vectorbestand van Marketbase.
+       Kleuren zijn wel exact overgenomen: #29ABE2 (helder blauw) en #1F4A78 (navy). -->
+  <g font-family="ui-sans-serif, system-ui, 'Segoe UI', Arial, sans-serif"
+     font-weight="800" font-size="92" letter-spacing="1"
+     stroke="#FFFFFF" stroke-width="9" stroke-linejoin="round" paint-order="stroke fill">
+    <text x="14" y="86" fill="#29ABE2">MARKET</text>
+    <text x="14" y="186" fill="#1F4A78">BASE</text>
+  </g>
+  <!-- vouwtent-icoon -->
+  <g fill="none" stroke="#FFFFFF" stroke-width="9" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M418 104 336 156 h164 z" fill="#29ABE2"/>
+    <path d="M418 104 500 156 h-164 z" fill="#29ABE2"/>
+    <path d="M344 156 v56 M492 156 v56" stroke="#29ABE2" stroke-width="12"/>
+  </g>
+  <rect x="14" y="206" width="300" height="16" rx="2" fill="#29ABE2" stroke="#FFFFFF" stroke-width="7"/>
+</svg>
